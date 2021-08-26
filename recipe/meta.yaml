@@ -1,5 +1,5 @@
 {% set name = "shapicant" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/shapicant-{{ version }}.tar.gz
-  sha256: f06fe94c9260523444a3ee4723c68afef55c6d44f578c6a3e1173dbd5fffb41e
+  sha256: 916e4afc070677be604dd49932b6f568cd1628d12804cff92469c69e5648e8d0
 
 build:
   number: 0
