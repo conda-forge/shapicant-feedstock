@@ -7,27 +7,29 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/shapicant-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/shapicant-{{ version }}.tar.gz
   sha256: f711d37ad212e3f46dfc829d372f8337d6618b877e7da6640cdccfe0a30d5147
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - numpy
     - pandas
-    - python >=3.6
+    - python >={{ python_min }}
     - scikit-learn
     - shap >=0.36.0
     - tqdm
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - shapicant
 
